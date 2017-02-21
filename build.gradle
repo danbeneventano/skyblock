@@ -1,0 +1,60 @@
+buildscript {
+    ext.kotlin_version = '1.1.0-rc-91'
+
+    repositories {
+        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath group: 'org.zeroturnaround', name: 'gradle-jrebel-plugin', version: '1.1.5'
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+plugins {
+    id "org.zeroturnaround.gradle.jrebel" version "1.1.5"
+}
+
+apply plugin: 'kotlin'
+apply plugin: 'rebel'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+group 'me.danbeneventano.skyblockplugin'
+version '0.1.0'
+
+repositories {
+    maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://repo.md-5.net/content/groups/public/' }
+    maven { url 'https://oss.sonatype.org/content/groups/public/' }
+    maven { url 'http://nexus.hc.to/content/repositories/pub_releases' }
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compileOnly group: 'org.spigotmc', name: 'spigot-api', version: '1.8.8-R0.1-SNAPSHOT'
+    compileOnly group: 'org.spigotmc', name: 'spigot', version: '1.8.8-R0.1-SNAPSHOT'
+    compile 'org.mongodb:mongodb-driver:3.0.4'
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.8.4"
+    compileOnly group: "net.milkbowl.vault", name: "VaultAPI", version: "1.6"
+}
+
+jar.enabled = false
+
+shadowJar {
+    dependencies {
+        exclude(dependency('org.spigotmc:spigot-api:.*'))
+        exclude(dependency('org.spigotmc:spigot:.*'))
+        exclude(dependency('net.milkbowl.vault:*'))
+    }
+    classifier = null
+}
+
+task deploy(type: Copy) {
+    from "${buildDir}/libs"
+    into "server/plugins/"
+}
