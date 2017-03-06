@@ -1,8 +1,7 @@
 buildscript {
-    ext.kotlin_version = '1.1.0-rc-91'
+    ext.kotlin_version = '1.1.0'
 
     repositories {
-        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1' }
         mavenCentral()
     }
     dependencies {
@@ -24,7 +23,6 @@ group 'me.danbeneventano.skyblockplugin'
 version '0.1.0'
 
 repositories {
-    maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.1' }
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven { url 'https://repo.md-5.net/content/groups/public/' }
     maven { url 'https://oss.sonatype.org/content/groups/public/' }

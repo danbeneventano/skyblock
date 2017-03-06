@@ -1,0 +1,35 @@
+challenges:
+  tier-one:
+    icon: cobblestone
+    cobble:
+        name: Cobblestone Miner
+        repeatable: false
+        requirements:
+          breakcobble:
+            type: break
+            material: cobblestone
+            amount: 64
+        rewards:
+          experience:
+            type: experience
+            amount: 50
+          sand:
+            type: item
+            material: sand
+            amount: 5
+  tier-two:
+    icon: bone
+    skeletonkiller:
+      name: Skeleton Killer
+      repeatable: false
+      requirements:
+        killskeleton:
+          type: kill
+          entity: skeleton
+          amount: 1
+      rewards:
+        sword:
+          type: item
+          material: diamond_sword
+          amount: 1
+          enchantment: sharpness 1

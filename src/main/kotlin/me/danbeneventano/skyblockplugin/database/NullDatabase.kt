@@ -1,6 +1,7 @@
 package me.danbeneventano.skyblockplugin.database
 
 import me.danbeneventano.skyblockplugin.islands.Island
+import me.danbeneventano.skyblockplugin.user.User
 import java.util.*
 
 class NullDatabase : Database {

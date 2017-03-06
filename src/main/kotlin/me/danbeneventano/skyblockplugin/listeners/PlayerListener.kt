@@ -1,7 +1,7 @@
 package me.danbeneventano.skyblockplugin.listeners
 
 import me.danbeneventano.skyblockplugin.SkyblockPlugin
-import me.danbeneventano.skyblockplugin.database.User
+import me.danbeneventano.skyblockplugin.user.User
 import me.danbeneventano.skyblockplugin.islands.Island
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler

@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCollection
 import com.mongodb.client.model.Filters
 import me.danbeneventano.skyblockplugin.SkyblockPlugin
 import me.danbeneventano.skyblockplugin.islands.Island
+import me.danbeneventano.skyblockplugin.user.User
 import org.bson.Document
 import org.bukkit.WorldCreator
 import java.util.*

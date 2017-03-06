@@ -1,7 +1,7 @@
 package me.danbeneventano.skyblockplugin.command
 
 import me.danbeneventano.skyblockplugin.SkyblockPlugin
-import me.danbeneventano.skyblockplugin.database.User
+import me.danbeneventano.skyblockplugin.user.User
 import me.danbeneventano.skyblockplugin.islands.Island
 import net.md_5.bungee.api.ChatColor
 import org.bukkit.*
